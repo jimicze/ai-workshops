@@ -1,0 +1,20 @@
+# Binary
+main
+smart-email-agent
+
+# Environment
+.env
+.env.*
+
+# Gmail OAuth tokens
+.gmail-mcp/
+
+# Go
+*.test
+*.out
+vendor/
+
+# IDE
+.vscode/
+.idea/
+*.swp
