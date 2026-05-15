@@ -41,7 +41,7 @@ const memory = new MemorySaver();
 const agent = createAgent({
   model: "google:gemini-2.5-flash",
   tools: [squareTool, weatherTool],
-  checkpoint: memory, // Enable persistence
+  checkpointer: memory, // Enable persistence
 });
 ```
 
@@ -122,7 +122,7 @@ const memory = SqliteSaver.fromConnString("./checkpoint.db");
 const agent = createAgent({
   model: "google:gemini-2.5-flash",
   tools: [squareTool, weatherTool],
-  checkpoint: memory, 
+  checkpointer: memory, 
 });
 ```
 
