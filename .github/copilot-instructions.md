@@ -12,15 +12,18 @@ This is a GDG workshop project building AI agents with **LangChain + Google Gemi
 
 ## Conventions
 - All source code lives in `ai-agent-langchain/src/`
-- Entry point is `src/index.ts`, run with `npm start` (`tsx src/index.ts`)
-- Tools are defined using `tool()` from `langchain` with `zod` schemas
-- Agents are created with `createAgent()` from `langchain`
+- `src/part1.ts` — Part 1 entry, `src/part2.ts` — Part 2 entry
+- Tools defined with `tool()` from `@langchain/core/tools` with `zod` schemas
+- Agents created with `createReactAgent()` from `@langchain/langgraph/prebuilt`
+- Model: `new ChatGoogleGenerativeAI({ model: 'gemini-2.5-flash' })` from `@langchain/google-genai`
 - Environment variables loaded via `@dotenvx/dotenvx` (not plain `dotenv`)
 - No `require()` — use `import` only
 
 ## Current State
-- Part 1 complete: `squareTool` + `weatherTool` + basic ReAct agent working
-- Part 2 in progress: adding `MemorySaver` persistence and `thread_id` conversation threading
+- **Both parts complete**
+- Part 1: `squareTool` + `weatherTool` + basic ReAct agent, no memory (`src/part1.ts`)
+- Part 2: `SqliteSaver` persistence, `thread_id` threading, multi-thread demo, interactive REPL (`src/part2.ts`)
+- Key gotcha: `SqliteSaver` requires `memory.setup()` before first use or it silently fails
 
 ## Key Files
 - `src/part1.ts` — Part 1: tools + basic ReAct agent (no memory)

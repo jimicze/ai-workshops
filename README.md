@@ -12,9 +12,10 @@ Build a ReAct agent with custom tools and persistent memory.
 | Part | Topic | Status |
 |---|---|---|
 | Part 1 | Custom tools (`square`, `get_weather`) + ReAct agent | ✅ Done |
-| Part 2 | Persistent memory with `MemorySaver` + `thread_id` | 🔲 In progress |
+| Part 2 | SqliteSaver persistence, multi-thread, interactive REPL | ✅ Done |
 
-**Stack**: Node.js, TypeScript, `langchain`, `@langchain/google-genai`, `@langchain/langgraph`, `zod`
+**Run**: `npm run part1` · `npm run part2`  
+**Stack**: Node.js, TypeScript, `@langchain/core`, `@langchain/google-genai`, `@langchain/langgraph`, `zod`
 
 ---
 
