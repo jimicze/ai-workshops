@@ -104,7 +104,7 @@ async function runInteractive() {
 
 // --- Main ---
 async function main() {
-  memory.setup();
+  (memory as any).setup();
 
   await runThread1();
   await runThread2();
