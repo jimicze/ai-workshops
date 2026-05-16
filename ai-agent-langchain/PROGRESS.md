@@ -9,9 +9,11 @@
 - [x] ReAct agent created with `createAgent` + `gemini-2.5-flash`
 - [x] Agent runs and correctly selects tools
 
-## Part 2: Memory & Persistence 🔲
-- [ ] Import `MemorySaver` from `@langchain/langgraph`
-- [ ] Initialize checkpointer and attach to agent
-- [ ] Implement `thread_id` conversation threading
-- [ ] Test multi-turn memory (name recall across turns)
-- [ ] Test independent threads (isolated conversation contexts)
+## Part 2: Memory & Persistence ✅
+- [x] Switch from `createAgent` to `createReactAgent` from `@langchain/langgraph/prebuilt`
+- [x] Initialize `SqliteSaver` checkpointer (on-disk, survives restarts)
+- [x] Call `memory.setup()` before first use
+- [x] Attach checkpointer to agent
+- [x] Implement `thread_id` conversation threading
+- [x] Test multi-turn memory (name recall across turns)
+- [x] Test persistence across process restarts (`checkpoint.db`)

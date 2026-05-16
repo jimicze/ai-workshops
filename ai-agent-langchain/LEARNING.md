@@ -24,10 +24,17 @@
 
 ## Part 2: Memory & Persistence
 
-_(To be filled after completing Part 2)_
-
-### MemorySaver
-- 
+### MemorySaver vs SqliteSaver
+- `MemorySaver` — in-process, lost on restart. Good for testing
+- `SqliteSaver` — on-disk, survives restarts. Use `SqliteSaver.fromConnString("./checkpoint.db")`
+- **Gotcha**: `SqliteSaver` requires `memory.setup()` before first use to create DB tables — without it, checkpoints silently fail
 
 ### Thread IDs
-- 
+- Every `agent.invoke()` call must pass `{ configurable: { thread_id: "..." } }` as the second argument
+- Same `thread_id` = same conversation history loaded from the checkpointer
+- Different `thread_id` = isolated context (separate "save file")
+
+### createReactAgent vs createAgent
+- `createAgent` from `langchain` does NOT support `checkpointer` — memory won't work
+- Use `createReactAgent` from `@langchain/langgraph/prebuilt` with `llm:` and `checkpointer:` options
+- Model must be instantiated explicitly: `new ChatGoogleGenerativeAI({ model: "gemini-2.5-flash" })`
