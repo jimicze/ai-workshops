@@ -23,8 +23,13 @@ This is a GDG workshop project building AI agents with **LangChain + Google Gemi
 - Part 2 in progress: adding `MemorySaver` persistence and `thread_id` conversation threading
 
 ## Key Files
-- `src/index.ts` — main agent code
+- `src/part1.ts` — Part 1: tools + basic ReAct agent (no memory)
+- `src/part2.ts` — Part 2: SqliteSaver memory, multi-thread, interactive REPL
 - `.env` — `GOOGLE_API_KEY` (not committed)
 - `WORKSHOP_PART1.md` / `WORKSHOP_PART2.md` — step-by-step instructions
 - `PROGRESS.md` — task checklist
 - `LEARNING.md` — notes and gotchas
+
+## Run Commands
+- `npm run part1` — run Part 1
+- `npm run part2` / `npm start` — run Part 2
